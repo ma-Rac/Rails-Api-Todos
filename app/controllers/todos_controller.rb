@@ -19,7 +19,7 @@ class TodosController < ApplicationController
 
 
       if @todo.save
-        format.json { render json: @todo, status: :created, location: @todo }
+        format.json { render json: @todo, status: :ok, location: @todo }
       else
         format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
