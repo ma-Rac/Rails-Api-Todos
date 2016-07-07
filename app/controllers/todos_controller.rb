@@ -19,7 +19,7 @@ class TodosController < ApplicationController
 
 
       if @todo.save
-        format.json { render json: @todo, status: :ok, location: @todo }
+        format.json { render json: @todo, status: :created }
       else
         format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
@@ -30,7 +30,7 @@ class TodosController < ApplicationController
   def update
     respond_to do |format|
       if @todo.update(todo_params)
-        format.json { render json: @todo, status: :ok, location: @todo }
+        format.json { render json: @todo, status: :ok}
       else
         format.json { render json: @todo.errors, status: :unprocessable_entity }
       end
