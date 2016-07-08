@@ -28,13 +28,13 @@ class TodosController < ApplicationController
 
 #I dont need patches.. but I'll leave this here JUST IN CASE.
   def update
-    respond_to do |format|
+
       if @todo.update(todo_params)
         render json: @todo, status: :ok
       else
-        render json: @todo.errors, status: :unprocessable_entity 
+        render json: @todo.errors, status: :unprocessable_entity
       end
-    end
+    
   end
 
 #Dont... don't do this.. It's only a todo.. you monster
